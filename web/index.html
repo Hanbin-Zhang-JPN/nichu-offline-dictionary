@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#123d36"><title>日中辞典 · 离线词典</title><link rel="icon" href="/icon.svg"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<a class="skip-link" href="#query">跳到搜索</a>
+<aside class="sidebar">
+  <a class="brand" href="/"><span class="brand-mark">辞</span><span>日中辞典<small>NICHI · CHŪ DICTIONARY</small></span></a>
+  <div class="edition">一部留在你身边的词典</div>
+  <nav aria-label="主导航"><button class="nav-item active" data-view="search"><span>⌕</span> 词典检索</button><button class="nav-item" data-view="favorites"><span>♡</span> 我的收藏 <b id="fav-count">0</b></button><button class="nav-item" data-view="history"><span>◷</span> 最近查询</button><a class="nav-item" href="/guide"><span>▤</span> 使用指南</a></nav>
+  <div class="sidebar-note"><span class="eyebrow">慢慢积累，日日有得</span><p lang="ja">言葉を知る。<br>世界がひろがる。</p><span>从一个词，读懂更多。</span></div>
+  <div class="local-state"><span class="status-dot"></span><b>本机离线词库</b><small id="snapshot-date">正在读取数据快照…</small><small>所有查询与收藏保存在本机</small></div>
+
+</aside>
+<main>
+  <header class="page-header"><div><span class="eyebrow">YOUR EVERYDAY JAPANESE COMPANION</span><h1 id="page-title">把每一个词，读得明白。</h1></div><a class="header-guide" href="/guide">使用帮助 <span>↗</span></a></header>
+  <div id="notice" class="notice" role="status" hidden></div>
+  <section class="search-area" aria-label="搜索词典">
+    <form id="search-form" class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><input id="query" type="search" placeholder="输入日语、假名、罗马字或中文释义…" autocomplete="off" maxlength="120" aria-label="查询词语"><kbd>/</kbd><button type="submit">查词 <span>↗</span></button></form>
+    <div class="search-tools"><div class="modes" role="group" aria-label="搜索模式"><button data-mode="auto" class="selected" aria-pressed="true">自动</button><button data-mode="ja" aria-pressed="false">日 → 中</button><button data-mode="zh" aria-pressed="false">中 → 日</button><button data-mode="exact" aria-pressed="false">精确</button><button data-mode="contains" aria-pressed="false">包含</button></div><div class="filters"><label><span class="sr-only">词性</span><select id="pos"><option value="">全部词性</option></select></label><label class="examples-filter"><input id="examples" type="checkbox">有例句</label><label><span class="sr-only">中文用字</span><select id="script"><option value="simplified">简体释义</option><option value="original">原文用字</option></select></label></div></div>
+    <div class="suggestions"><span>试着查查</span><button data-query="学校">学校</button><button data-query="ありがとう">ありがとう</button><button data-query="neko">neko</button><button data-query="学习">学习</button></div>
+  </section>
+  <section class="workspace">
+    <div class="results-panel"><div class="panel-head"><div><span class="eyebrow" id="result-caption">SEARCH RESULTS</span><h2 id="result-title">查询结果 <small id="result-count"></small></h2></div><span class="mini-dot" aria-hidden="true"></span></div><div id="results" aria-live="polite" aria-busy="true"></div><div class="pagination"><button id="previous" disabled aria-label="上一页">← 上一页</button><span id="page-number"></span><button id="next" disabled aria-label="下一页">下一页 →</button></div></div>
+    <article id="detail" class="detail-panel" aria-label="词条详情"><div class="empty-state"><span class="empty-kanji">語</span><h2>从一个词开始。</h2><p>点击左侧词条，查看释义、读音和用法。</p></div></article>
+  </section>
+  <footer><span id="corpus-summary">正在载入词库…</span><span>中文维基词典贡献者 · <a href="/guide#license">CC BY-SA 4.0</a></span>  <div class="learning-tools"><button id="export" class="text-button">导出学习记录 ↗</button><label class="text-button import-label">导入记录<input id="import" type="file" accept="application/json,.json"></label></div></footer>
+</main>
+</body></html>

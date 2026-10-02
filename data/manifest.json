@@ -1,0 +1,19 @@
+{
+  "edition": "zhwiktionary",
+  "language": "ja",
+  "gloss_language": "zh",
+  "dump_date": "2026-10-01",
+  "extraction_date": "2026-10-02",
+  "source_url": "https://kaikki.org/zhwiktionary/raw-wiktextract-data.jsonl.gz",
+  "source_info_url": "https://kaikki.org/zhwiktionary/rawdata.html",
+  "source_sha256": "eab0c6887c4395fd9d16d5be95473b9474e4580c071b686548e20e380ac4ccbe",
+  "snapshot_sha256": "4b19151f8b38b2d8d630b96a853227b2230666adc5b058be9eac3c4767860c82",
+  "source_records": 137520,
+  "license": "CC-BY-SA-4.0",
+  "attribution": "中文维基词典贡献者；Wiktextract / Kaikki.org（Tatu Ylonen 等）",
+  "modifications": "筛选 lang_code=ja；JSON 键排序与完全重复记录去重；构建本地检索索引；中文简体显示为派生视图，原始记录保留。",
+  "opencc": {
+    "TSCharacters.txt": "9ff46a7d30e5765375eb13d33f2b03a34d298913caf2b120380679f33ae1642d",
+    "TSPhrases.txt": "9a23666e95c97dbf8668b5d71ca19f09f33b4f3a3aa9e05677dab4b608cef102"
+  }
+}

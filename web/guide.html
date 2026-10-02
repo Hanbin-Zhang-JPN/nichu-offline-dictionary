@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>使用指南 · 日中辞典</title><link rel="stylesheet" href="/style.css"><link rel="icon" href="/icon.svg"></head><body class="guide-page">
+<a href="/">← 返回日中辞典</a><h1>离线查词，从这里开始。</h1>
+<p>词库、界面和检索服务全部保存在本机。启动后可以断开互联网，但请保持终端中的服务运行。首次使用自动从附带快照生成 SQLite 索引，无需下载依赖。</p>
+<h2>五种检索方式</h2><table><tr><th>模式</th><th>用途</th><th>示例</th></tr><tr><td>自动</td><td>日语词头、词形、读音的精确和前缀匹配，同时查找中文释义</td><td>学校、がっこう、gakkou、学习</td></tr><tr><td>日 → 中</td><td>仅检索日语词头、读音、罗马字和源词形；精确命中优先</td><td>食べる、タベル、taberu</td></tr><tr><td>中 → 日</td><td>检索中文释义中的文字；简繁体输入均可</td><td>猫、貓、学习、學習</td></tr><tr><td>精确</td><td>仅精确匹配词头、源词形或标准化后的读音/罗马字</td><td>はし、箸</td></tr><tr><td>包含</td><td>匹配日语词头/读音或中文释义中包含的文字</td><td>学校、食べ</td></tr></table>
+<p>全角/半角以及平假名/片假名统一检索。罗马字由已有假名读音机械生成，支持基本长音宽松匹配；它不是完整语言解析器。词形检索依赖词库附带的活用记录，不保证能分析任意句子、所有口语变化或无读音词条。</p>
+<h2>查看词条</h2><p>详情保留源词性和义项顺序，按实际数据展示中文释义、例句/引文及其翻译、IPA、源音调、语源、近义词、反义词、派生词和活用。没有收录的读音会明确显示“读音未收录”。“简体释义”转换中文释义及中文翻译，日语词头和日语例句保持原文；“原文用字”保留源中文。</p><p>♪ 仅在浏览器检测到系统已经安装的本地日语语音时可用。不会下载声音文件，也不会调用云端语音服务。词库中的音频链接不会自动加载。源链接明确标注需要联网。</p>
+<h2>收藏和历史</h2><p>点击 ♡ 收藏词条。按 Enter 查询或打开词条会留下历史，最多保留 100 条。学习记录使用浏览器 localStorage，按浏览器与本地地址保存；更换端口、浏览器或清理站点数据会影响记录。建议定期导出 JSON，并在另一浏览器中导入。导入会合并收藏和历史。</p><p>词条 ID 由源记录内容哈希生成。同一快照重建后保持稳定；更新词库时，内容发生变化的词条 ID 可能变化，旧收藏可能需要重新检索并收藏。</p>
+<h2>命令行与运行环境</h2><pre>python3 -m nichu.server
+python3 -m nichu 学校
+python3 -m nichu 学习 --mode zh --json
+python3 -m nichu --stats</pre><p>需要 Python 3.10 或更新版本和现代浏览器；不需要 npm、pip 安装或账户登录。Windows 可用 <code>py -3</code> 替换 <code>python3</code>。默认地址为 <code>http://127.0.0.1:8765</code>，可用 <code>--port 8766</code> 更换端口。</p>
+<h2 id="license">数据来源与许可</h2><p>词典文本由<a href="https://zh.wiktionary.org/wiki/Wiktionary:版权信息" target="_blank" rel="noopener noreferrer">中文维基词典贡献者</a>编写，经 <a href="https://kaikki.org/zhwiktionary/rawdata.html" target="_blank" rel="noopener noreferrer">Kaikki.org / Wiktextract</a>提取。仓库记录快照日期与 SHA-256 校验值。词库及派生索引按 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> 分发，应用代码采用 MIT，OpenCC 转换词表采用 Apache-2.0。每个词条链接到来源页及编辑历史。</p><p>本项目完整提供所选快照中可导入的日语记录，不代表收录日语中所有词语。中文维基词典是社区数据，词性、中文释义、读音、例句和音调的覆盖并不均匀。无释义记录保留在原始快照中，不进入可查询词库；质量报告见仓库 <code>data/stats.json</code> 与 <code>docs/DATA.md</code>。不会把自动生成的译文、例句、JLPT 等级或词频当成源事实。</p>
+<p>进一步查看仓库中的 README、数据说明、架构说明、贡献指南与测试。所有外部来源链接均需要联网，查词功能无需联网。</p></body></html>
