@@ -22,7 +22,7 @@ def package(version):
     prefix = f"nichu-offline-dictionary-{version}"
     archive = destination / f"{prefix}.zip"
     directories = {"nichu", "web", "scripts", "tests", "docs", "data", "licenses", ".github"}
-    root_files = {"README.md", "LICENSE", "DATA_LICENSE.md", "CONTRIBUTING.md", "start.command", "start.bat", ".gitignore"}
+    root_files = {"README.md", "LICENSE", "DATA_LICENSE.md", "CONTRIBUTING.md", "start.command", "start.bat", ".gitignore", ".gitattributes"}
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zipped:
         for path in sorted(ROOT.rglob("*")):
             relative = path.relative_to(ROOT)

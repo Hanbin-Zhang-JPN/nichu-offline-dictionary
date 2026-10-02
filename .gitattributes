@@ -1,0 +1,6 @@
+# Keep checksum-protected data identical on Windows, macOS and Linux.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.gz binary
+*.png binary
+*.sqlite3 binary
